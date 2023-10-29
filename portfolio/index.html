@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" type="text/css" href="myportfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color:
+            #0a4c62;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+        width: 100%;
+        min-width: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    header img {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+        }
+
+        100% {
+            box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
+        }
+    }
+
+    header h3 {
+        color: white;
+        margin: 1.5rem 0;
+        letter-spacing: 0.2rem;
+        font-size: 1.5rem;
+    }
+
+    header p {
+        color: white;
+    }
+
+    .arrow {
+        color: white;
+        margin-top: 5rem;
+        font-size: 1.5rem;
+        animation: arrow 2s ease-in-out infinite;
+    }
+
+    @keyframes arrow {
+        0% {
+            color: #3c6382;
+        }
+
+        50% {
+            color: #0a3d62;
+        }
+
+        100% {
+            color: #3c6382;
+        }
+    }
+
+    .container {
+        width: 100%;
+        min-height: 150vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 0.8fr 0.2fr;
+        gap: 1rem;
+        grid-template-areas: "profile profile skills skills"
+            "edu edu edu lang"
+            "contact exp exp exp"
+            "footer footer footer footer";
+        padding: 2rem;
+    }
+
+    .profile {
+        background-color: white;
+        color: black;
+        padding: 2rem;
+        grid-area: profile;
+    }
+
+    .skills {
+        background-color: #3c6382;
+        color: white;
+        padding: 2rem;
+        grid-area: skills;
+    }
+
+    .edu {
+        background-color: #3c6382;
+        color: white;
+        padding: 2rem;
+        grid-area: edu;
+    }
+
+    .lang {
+        background-color: white;
+        color: #0a3d62;
+        padding: 2rem;
+        grid-area: lang;
+    }
+
+    .contact {
+        background-color: white;
+        color: #0a3d62;
+        padding: 2rem;
+        grid-area: contact;
+    }
+
+    .exp {
+        background-color: #3c6382;
+        color: white;
+        padding: 2rem;
+        grid-area: exp;
+    }
+
+    footer {
+        background-color: #3c6382;
+        text-align: center;
+        color: white;
+        padding: 2rem;
+        grid-area: footer;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .profile p {
+        padding: 0.3rem 1rem;
+        text-align: justify;
+        line-height: 2.2rem;
+    }
+
+    .profile a {
+        text-decoration: none;
+        padding: 0.5rem 0.7rem;
+        background-color: #0a3d62;
+        color: white;
+    }
+
+    .skills div {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .skills div progress[value] {
+        width: 100%;
+        height: 1rem;
+    }
+
+    .edu h2 {
+        letter-spacing: 0.1rem;
+    }
+
+    .edu p {
+        padding: 0.3rem 1rem;
+        text-align: justify;
+        line-height: 2.2rem;
+    }
+
+    .edu a {
+        text-decoration: none;
+        padding: 0.5rem 0.7rem;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+
+    .lang ul {
+        margin: 1rem 0;
+        padding: 0.3rem 1rem;
+    }
+
+    .lang ul li {
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .contact {
+        margin-right: 0.2rem;
+    }
+
+    .contact p {
+        margin: 1rem 0;
+        cursor: pointer;
+    }
+
+    .exp p {
+        padding: 0.3rem 1rem;
+        text-align: justify;
+        line-height: 2.2rem;
+    }
+
+    footer i {
+        background-color: white;
+        color: black;
+        padding: 0.5rem;
+        margin: 1rem 0.2rem;
+        border-radius: 50%;
+        transition: 0.4s;
+    }
+
+    footer i:hover {
+        background-color: #0a3d62;
+        color: white;
+        cursor: pointer;
+    }
+
+    footer {
+        text-align: cente r;
+    }
+
+    @media only screen and(max-width: 770px) {
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.8fr 0.6fr 1fr 0.6fr 0.5fr 0.8fr 0.1fr;
+            grid-template-areas: "profile" "skills" "edu" "lang" "contact" "exp" "footer";
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <img src="images\profile.jpg">
+        <h3>LOHITHA YALLABANDI</h3>
+        <a href="#container">
+            <i class="fa fa-long-arrow-down arrow"></i>
+        </a>
+    </header>
+    <div class="container" id="container">
+        <div class="profile">
+            <h2>My profile</h2>
+            <p>Hello Guys!!</p>
+            <p>My name is <strong>Lohitha yallabandi</strong> and i am from Telangana. Currently, I am pursuing Btech
+                from
+                MVSR Engineering College,third year electronic and communication engineering student seeking a
+                responsible position in the reputed IT- based industry in order to gain a practical experience and serve
+                my organisation. I am a passionate and dedicated with a strong interest in Web Development. My
+                strength is that I am a self-motivated person. My weakness is that I am a little bit sentimental.</p>
+            <br><br>
+            <a href="">Read more</a>
+        </div>
+        <div class="skills">
+            <h2>My Skills</h2>
+            <div>
+                <label>HTML</label>
+                <progress value="80" max="100">80%</progress>
+            </div>
+            <div>
+                <label>CSS</label>
+                <progress value="55" max="100">55%</progress>
+            </div>
+            <div>
+                <label>JavaScript</label>
+                <progress value="50" max="100">50%</progress>
+            </div>
+            <div>
+                <label>C</label>
+                <progress value="80" max="100">80%</progress>
+            </div>
+            <div>
+                <label>C++</label>
+                <progress value="60" max="100">60%</progress>
+            </div>
+
+            <div>
+                <label>Java</label>
+                <progress value="40" max="100">40%</progress>
+            </div>
+        </div>
+        <div class="edu">
+            <h2>Education</h2>
+            <h2>My Qualifications</h2>
+
+            <p>B-tech(2021-2025) from MVSR Engineering College Osmania University, Hyderabad</p>
+            <p>XIIth(2019-2021) from Narayana Junior College,Sr.nagar</p>
+            <p>Xth(2018-2019) from sri sai ram high school</p>
+            <br><br>
+            <!-- <a href="img/mycv.pdf" download="mycv">Download My CV</a> -->
+        </div>
+        <div class="lang">
+            <h2>Projects</h2>
+            <ul>
+                <!-- <li>Amazon Clone using HTML/CSS</li> -->
+                <li>Temperature Converter HTML, CSS and JAVASCRIPT</li>
+                <li>Portfolio using HTML/CSS</li>
+            </ul>
+            <h2>Internships</h2>
+            <ul>
+                <!-- <li>Amazon Clone using HTML/CSS</li> -->
+                <li>Embedded developer virtual Internship</li>
+                <!-- <li>Portfolio using HTML/CSS</li> -->
+            </ul>
+        </div>
+        <div class="contact">
+            <h2>My Contact</h2>
+            <div>
+                <p>
+                    <i class="fa fa-map"></i>
+                    Krishna Nagar,Hyd
+                </p>
+                <p>
+                    <i class="fa fa-phone"></i>
+                    7396093171
+                </p>
+                <p>
+                    <i class="fa fa-envelope"></i>
+                    lohitha10461@gmail.com
+                </p>
+
+
+            </div>
+        </div>
+        <div class="exp">
+            <h2>Experience</h2>
+            <h2></h2>
+            <p>I am looking for an opportunity in web development to bring my knowlwdge to the table and use it for the
+                success of the organization. I have knowledge on
+                programming languages like Java, Python and C.</p>
+        </div>
+        <footer>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-envelope"></i>
+            <!-- <i class="fa fa-telegram"></i> -->
+            <h2>Developed by LOHITHA YALLABANDI</h2>
+        </footer>
+    </div>
+</body>
+
+</html>
